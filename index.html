@@ -31,7 +31,7 @@
                 <div v-if="errorMessage">
                     {{errorMessage}}
                 </div>
-                <li v-for="email in emails" >
+                <li v-for="email in emails" v-if="allEmailGenerated">
                     {{email}}
                 </li>
             </ul>

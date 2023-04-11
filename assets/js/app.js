@@ -18,7 +18,7 @@ createApp({
                 .then(response => {
                     this.emails.push(response.data.response); 
                     if (i === this.numberOfEmail - 1) {
-                        allEmailGenerated = true
+                        this.allEmailGenerated = true
                         
                     }
                 }
