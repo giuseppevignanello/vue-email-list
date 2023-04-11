@@ -22,7 +22,7 @@
             <button @click="generateEmail" class="btn btn-warning mb-3">Click Here</button>
             <div class="ms-5 d-flex flex-column justify-content-center">
                 <label for="howManyEmail">How Many Email?</label>
-                <input class="form-control h-50 w-50 my-3" type="number" aria-label="default input example"
+                <input v-model="numberOfEmail" class="form-control h-50 w-50 my-3" type="number" aria-label="default input example"
                     id="howManyEmail">
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <div v-if="errorMessage">
                     {{errorMessage}}
                 </div>
-                <li v-for="email in emails" v-if="emails.length === 10 ">
+                <li v-for="email in emails" >
                     {{email}}
                 </li>
             </ul>
