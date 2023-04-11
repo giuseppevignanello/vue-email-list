@@ -8,7 +8,8 @@ createApp({
             errorMessage: null, 
         }
     },
-    mounted() {
+    methods: { 
+        generateEmail() {
         for (let i = 0; i < 10; i++) {
             axios
                 .get(this.emailGenerator)
@@ -22,6 +23,6 @@ createApp({
                 }
                 )
         }
-    }, 
-
+    },
+}
 }).mount('#app')
