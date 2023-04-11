@@ -16,9 +16,10 @@ createApp({
                     this.emails.push(response.data.response)
                 }
                 )
-                .catch(error => 
+                .catch(error => {
                     console.error(error.message),
                     this.errorMessage = error.message
+                }
                 )
         }
     }, 
