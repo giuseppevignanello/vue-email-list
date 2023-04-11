@@ -12,8 +12,12 @@
 
 
     <div id="app">
-        <div v-if="randomEmail">
-            {{randomEmail}}
+        <div>
+           <ul>
+            <li v-for="email in emails">
+                {{email}}
+            </li>
+           </ul>
         </div>
     </div>
 

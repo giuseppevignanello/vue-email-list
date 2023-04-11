@@ -1,16 +1,23 @@
 const { createApp } = Vue
 
-  createApp({
+createApp({
     data() {
-      return {
-          emailGenerator : "https://flynn.boolean.careers/exercises/api/random/mail",
-          randomEmail: null
-      }
+        return {
+            emailGenerator: "https://flynn.boolean.careers/exercises/api/random/mail",
+            emails: []
+        }
     },
     mounted() {
-        axios
-        .get(this.emailGenerator)
-        .then(response =>
-           this.randomEmail = response.data.response)
+        for (let i = 0; i < 10; i++) {
+            axios
+                .get(this.emailGenerator)
+                .then(response => {
+                    this.emails.push(response.data.response)
+                }
+
+                )
+        }
+
+
     }
-  }).mount('#app')
+}).mount('#app')
