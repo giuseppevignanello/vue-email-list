@@ -30,5 +30,9 @@ createApp({
                 )
         }
     },
+    deleteAllEmails() {
+        this.emails = []
+        this.numberOfEmail = 0
+    }
 }
 }).mount('#app')
