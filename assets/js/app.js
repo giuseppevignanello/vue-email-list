@@ -4,7 +4,8 @@ createApp({
     data() {
         return {
             emailGenerator: "https://flynn.boolean.careers/exercises/api/random/mail",
-            emails: []
+            emails: [], 
+            errorMessage: null, 
         }
     },
     mounted() {
@@ -14,10 +15,12 @@ createApp({
                 .then(response => {
                     this.emails.push(response.data.response)
                 }
-
+                )
+                .catch(error => 
+                    console.error(error.message),
+                    this.errorMessage = error.message
                 )
         }
+    }, 
 
-
-    }
 }).mount('#app')
